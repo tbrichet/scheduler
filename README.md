@@ -28,4 +28,6 @@ This interactive scheduler was created as the Week 5 Challenge Assignment for th
 https://tbrichet.github.io/scheduler
 
 ## Contribution
-Made with <3 by Tara Brichetto
+HTML and CSS starter code provided by the University of Arizona <br>
+Third Party APIs include Bootstrap, jQuery, Moment.js, and Open Iconic <br>
+Remaining code created with <3 by Tara Brichetto
