@@ -9,7 +9,7 @@ function dateRender() {
 
 dateRender();
 
-// Allow user to edit task description
+// Allow User to Edit Task Description
 $(".description").on("click", "p", function() {
     var text = $(this)
         .text()
@@ -21,7 +21,21 @@ $(".description").on("click", "p", function() {
     textInput.trigger("focus");
 });
 
-// Compare Times to Current Hour and Change Style Accordingly
+// User Clicks out of Test Area
+$(".description").on("blur", "textarea", function() {
+    var text = $(this)
+        .val()
+        .trim();
+    
+    var taskP = $("<p>")
+        .text(text);
+
+    $(this).replaceWith(taskP);
+
+    auditTime();
+});
+
+// Compare Times to Current Hour and Change Style to Past, Present, or Future Accordingly
 
 function auditTime() {
     // Determine value of current hour
