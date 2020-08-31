@@ -1,6 +1,7 @@
+// Run Audit Function
+auditTime();
 
 //Add Today's Date to Top of Page
-
 var currentDay = moment().format('dddd MMMM Do');
 
 function dateRender() {
@@ -32,11 +33,31 @@ $(".description").on("blur", "textarea", function() {
 
     $(this).replaceWith(taskP);
 
+    localStorage.setItem("tasks", JSON.stringify(text));
+
     auditTime();
+    saveTasks();
 });
 
-// Compare Times to Current Hour and Change Style to Past, Present, or Future Accordingly
+// Save Button
+$(".saveBtn").click(function () {
+    alert("Item Saved");
+    saveTasks();
+});
 
+//Save Tasks Function
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(text));
+};
+
+// Load Tasks Function
+function loadTasks() {
+    JSON.parse(localStorage.getItem("tasks"))
+};
+loadTasks();
+
+
+// Define Audit Function
 function auditTime() {
     // Determine value of current hour
     var m = moment().format('H');
@@ -172,5 +193,3 @@ function auditTime() {
         $("#seventeen").find("p").addClass("past");
     };
 };
-
-auditTime();
