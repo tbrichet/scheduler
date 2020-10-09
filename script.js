@@ -133,19 +133,25 @@ var saveTask = function(event) {
     var textBox = presSib.firstChild;
     var id = textBox.id;
     var userInput = textBox.value;
+    console.log(id);
+    console.log(typeof id);
     
-    var storageItems = {id, userInput}
 
-
-    localStorage.setItem("WorkDayScheduler", JSON.stringify(storageItems));
+// PICK UP HERE NEXT WEEK
+    //var storageItems = {id, userInput}
+    //localStorage.setItem("WorkDayScheduler", JSON.stringify(storageItems));
+    localStorage.setItem(id, userInput);
 
 
 }
 
 // Function to Retrieve Tasks from Local Storage and Display to Page
 var retrieveTask = function() {
-    localStorage.getItem
+    localStorage.getItem()
 }
+console.log(localStorage.getItem("userInput8"));
+document.getElementById("userInput8").value = localStorage.getItem("userInput8");
+
 
 // Event Listener for Save Button
 $(document).on("click", ".saveBtn", saveTask)
