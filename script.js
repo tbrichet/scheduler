@@ -147,14 +147,26 @@ var saveTask = function(event) {
 
 // Function to Retrieve Tasks from Local Storage and Display to Page
 var retrieveTask = function() {
-    localStorage.getItem()
+    for (i=8; i<17; i++) { 
+        document.getElementById("userInput" + i ).value = localStorage.getItem("userInput" + i);
+    }
 }
-console.log(localStorage.getItem("userInput8"));
-document.getElementById("userInput8").value = localStorage.getItem("userInput8");
+
+// PICK UP HERE AND MAKE FOR LOOP SATURDAY 10/10
+// console.log(localStorage.getItem("userInput8"));
+// document.getElementById("userInput8").value = localStorage.getItem("userInput8");
+// document.getElementById("userInput9").value = localStorage.getItem("userInput9");
+// document.getElementById("userInput10").value = localStorage.getItem("userInput10");
+// document.getElementById("userInput11").value = localStorage.getItem("userInput11");
+// document.getElementById("userInput12").value = localStorage.getItem("userInput12");
+// document.getElementById("userInput13").value = localStorage.getItem("userInput13");
+// document.getElementById("userInput14").value = localStorage.getItem("userInput14");
+// document.getElementById("userInput15").value = localStorage.getItem("userInput15");
+// document.getElementById("userInput16").value = localStorage.getItem("userInput16");
 
 
 // Event Listener for Save Button
 $(document).on("click", ".saveBtn", saveTask)
 
 //Run Retrive Task Function on page load
-//retrieveTask();
+retrieveTask();
